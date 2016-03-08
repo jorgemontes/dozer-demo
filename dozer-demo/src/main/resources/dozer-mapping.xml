@@ -1,15 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mappings xmlns="http://dozer.sourceforge.net"
-          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-          xsi:schemaLocation="http://dozer.sourceforge.net
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://dozer.sourceforge.net
           http://dozer.sourceforge.net/schema/beanmapping.xsd">
 
-	<mapping>
+	<configuration>
+		<custom-converters>
+			<converter type="com.jorge.dozer.converters.PersonEmailConverter">
+				<class-a>java.util.List</class-a>
+				<class-b>java.util.Set</class-b>
+			</converter>
+		</custom-converters>
+	</configuration>
+
+
+	<mapping wildcard="false">
 		<class-a>com.jorge.dozer.PersonABeanXML</class-a>
 		<class-b>com.jorge.dozer.PersonBBeanXML</class-b>
 		<field>
 			<a>name</a>
 			<b>nameCap</b>
+		</field>
+		<field>
+			<a date-format="dd/MM/yyyy HH:mm:ss:SS">dateString</a>
+			<b>dateObject</b>
+		</field>
+		<field>
+			<a>address</a>
+			<b>addressObj.address</b>
+		</field>
+		<field>
+			<a>emails</a>
+			<b>domains</b>
 		</field>
 	</mapping>
 
