@@ -13,7 +13,7 @@
 	</configuration>
 
 
-	<mapping wildcard="false">
+	<mapping wildcard="false" stop-on-errors="false" >
 		<class-a>com.jorge.dozer.PersonABeanXML</class-a>
 		<class-b>com.jorge.dozer.PersonBBeanXML</class-b>
 		<field>
@@ -31,6 +31,14 @@
 		<field>
 			<a>emails</a>
 			<b>domains</b>
+		</field>
+		<field custom-converter="com.jorge.dozer.converters.CompleteNameConverter">
+			<a>name</a>
+			<b>completeName</b>
+		</field>
+		<field custom-converter="com.jorge.dozer.converters.CompleteNameConverter">
+			<a>lastName</a>
+			<b>completeName</b>
 		</field>
 	</mapping>
 

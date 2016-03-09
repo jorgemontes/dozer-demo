@@ -27,12 +27,13 @@ public class XmlMapperTest {
 		domains.add("gmail.com");
 		domains.add("globant.com");
 		domains.add("hotmail.com");
-		PersonABeanXML personA = new PersonABeanXML("jorge", "06/06/2006 18:00:00:00",emails,"suba");
+		PersonABeanXML personA = new PersonABeanXML("Jorge", "Montes", "06/06/2006 18:00:00:00", emails, "suba");
 		PersonBBeanXML personB = DozerMapperXML.mapPerson(personA);
 		Date dateObj = DateUtils.parseDate("06/06/2006 18:00:00:00", "dd/MM/yyyy HH:mm:ss:SS");
-		assertEquals("jorge", personB.getNameCap());
+		assertEquals("Jorge", personB.getNameCap());
 		assertEquals(dateObj, personB.getDateObject());
 		assertEquals(domains, personB.getDomains());
 		assertEquals("suba", personB.getAddressObj().getAddress());
+		assertEquals("Jorge Montes", personB.getCompleteName());
 	}
 }

@@ -4,13 +4,15 @@ import java.util.List;
 
 public class PersonABeanXML {
 	private String name;
+	private String lastName;
 	private String dateString;
 	private List<String> emails;
 	private String address;
 
-	public PersonABeanXML(String name, String dateString, List<String> emails, String address) {
+	public PersonABeanXML(String name, String lastName, String dateString, List<String> emails, String address) {
 		super();
 		this.name = name;
+		this.lastName = lastName;
 		this.dateString = dateString;
 		this.emails = emails;
 		this.address = address;
@@ -47,7 +49,13 @@ public class PersonABeanXML {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	
-	
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
 
 }

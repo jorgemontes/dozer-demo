@@ -9,6 +9,7 @@ public class PersonBBeanXML {
 	private Date dateObject;
 	private Set<String> domains;
 	private AddressB addressObj;
+	private String completeName;
 
 	public PersonBBeanXML() {
 		super();
@@ -48,6 +49,14 @@ public class PersonBBeanXML {
 
 	public void setAddressObj(AddressB addressObj) {
 		this.addressObj = addressObj;
+	}
+
+	public String getCompleteName() {
+		return completeName;
+	}
+
+	public void setCompleteName(String completeName) {
+		this.completeName = completeName;
 	}
 
 }

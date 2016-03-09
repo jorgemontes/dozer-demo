@@ -18,7 +18,8 @@ buildscript {
 
 
 repositories {
-    mavenCentral()
+	 maven{url 'https://nexus-tools.swacorp.com/ARCH/content/groups/public'}
+    //mavenCentral()
 }
 
 
